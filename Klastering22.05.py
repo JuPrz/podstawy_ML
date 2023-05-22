@@ -28,7 +28,8 @@ df_train[reg_col] = df_train[reg_col].apply(label_encoder.fit_transform)
 
 kmeans = KMeans(n_clusters=3)
 kmeans.fit(df_train)
-labels = kmeans.labels_
+labels = kmeans.labels_ #wyniki który wiersz do którego klustra
+print(labels)
 
 model = AgglomerativeClustering(distance_threshold=0, n_clusters=None)
 model.fit(df_train)
